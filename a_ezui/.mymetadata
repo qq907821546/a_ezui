@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="a_ezui"
+  id="myeclipse.1455589253365"
+  context-root="/a_ezui"
+  j2ee-spec="5.0"
+  archive="a_ezui.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
