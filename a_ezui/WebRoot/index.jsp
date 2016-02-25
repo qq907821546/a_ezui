@@ -25,7 +25,7 @@ http://www.templatemo.com/tm-413-flip-turn
 		<nav class="main-nav">
 			<div id="logo" class="left"><a href="#">GK WHITE</a></div>
 			<ul class="nav right center-text">
-				<li class="btn active">主页</li>
+				<li class="btn active">主页33333</li>
 				<li class="btn"><a href="about.jsp">技术</a></li>
 				<li class="btn"><a href="awards.jsp">记录点滴</a></li>				
 				<li class="btn"><a href="contact.jsp">给他留言</a></li>
