@@ -15,11 +15,19 @@ String ezuiPath = path + "/ezui";
 	<link rel="stylesheet" type="text/css" href="<%=ezuiPath %>/demo.css">
 	<script type="text/javascript" src="<%=ezuiPath %>/jquery.min.js"></script>
 	<script type="text/javascript" src="<%=ezuiPath %>/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="<%=ezuiPath %>/easyui-ueditor.js"></script>
 	<script type="text/javascript">
     	function clearForm(){
     	 $('#ff').form('clear');
    		 }
    		function submitForm(){
+   		
+   		var html = ue.getContent();
+   		
+   		$("#content").val(html);
+   		
+   		alert($("#content").val());
+   		
     	 $('#ff').form('submit', {
     		 url:"<%=path %>/backstage/saveArticle.html",
    			 onSubmit: function(){
@@ -37,11 +45,23 @@ String ezuiPath = path + "/ezui";
   </head>
   
   <body>
+  
     <form id="ff" method="post">
                        标题：<input type="text" name="tittle"></br></br>
-                       描述：</br><textarea name="article" rows="3px" cols="30px"></textarea></br></br>   
-                       内容：</br><textarea name="content" rows="10px" cols="30px"></textarea></br>   
+                       描述：</br><textarea name="article" rows="3px" cols="30px"></textarea></br></br><!--   
+                       内容：</br><textarea  name="content" rows="10px" cols="30px"></textarea></br>   
+                       --><input id="content" type="hidden" name="content">
     </form>
+    <!-- 加载编辑器的容器 -->
+    <script id="container" name="content" type="text/plain"></script>
+    <!-- 配置文件 -->
+    <script type="text/javascript" src="<%=path %>/js/ueditor.config.js"></script>
+    <!-- 编辑器源码文件 -->
+    <script type="text/javascript" src="<%=path %>/js/ueditor.all.js"></script>
+    <!-- 实例化编辑器 -->
+    <script type="text/javascript">
+        var ue = UE.getEditor('container');
+    </script>
     <a href="javascript:void(0)" class="easyui-linkbutton" onclick="submitForm()">保存</a> 
     <a href="javascript:void(0)" class="easyui-linkbutton" onclick="clearForm()">重置</a> 
   </body>

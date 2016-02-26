@@ -13,7 +13,7 @@ String ezuiPath = path + "/ezui";
 	<link rel="stylesheet" type="text/css" href="<%=ezuiPath %>/demo.css">
 	<script type="text/javascript" src="<%=ezuiPath %>/jquery.min.js"></script>
 	<script type="text/javascript" src="<%=ezuiPath %>/jquery.easyui.min.js"></script>
-	<script type="text/javascript"><!--
+	<script type="text/javascript">
 	$(function(){
 	$('#tt').datagrid({
 			    url:'<%=path %>/backstage/findArticles.html',
@@ -140,6 +140,7 @@ String ezuiPath = path + "/ezui";
 			<div id="p" style="padding:10px;">
 				<iframe id="frame_content" name="frame_content" style="width: 100%;height: 100%" frameborder="0"></iframe> 
             </div>
+            
 		</div>
 	<script type="text/javascript">
 		function addArticle(){
@@ -148,7 +149,7 @@ String ezuiPath = path + "/ezui";
 		frame1.src = url;
 		  $('#p').dialog({
 			title: "文章信息",
-			width: 350,
+			width: 850,
 			resizable:true,
 			closed: false,    
 			cache: false,    
