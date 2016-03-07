@@ -1,7 +1,10 @@
 package com.gk666.backstage.service.impl;
 
 import java.util.List;
+
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Service;
 
 import com.gk666.backstage.dao.ArticleDao;
@@ -27,6 +30,11 @@ public class ArticleService {
 	}
 	public int delArticle(String id){
         return articleDao.delArticle(id);
+	}
+	public Article findArticleById(HttpServletRequest request){
+		String id = request.getParameter("id");
+		System.out.println(id+"+++++++++++++++++++++++++++++++");
+        return articleDao.findArticleById(id);
 	}
 	
 }

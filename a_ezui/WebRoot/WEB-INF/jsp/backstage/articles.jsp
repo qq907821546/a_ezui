@@ -68,6 +68,19 @@ String ezuiPath = path + "/ezui";
 						location.href="<%=path %>/backstage/getArticle.html";
 					}
 					},{
+					id:'btn',
+					text:'修改',
+					iconCls:'icon-edit',
+					handler:function(){
+						var checkedItems = $('#tt').datagrid('getChecked');
+						if(checkedItems.length <= 0||checkedItems.length > 1){
+						alert("请选择一条数据");
+						return;
+						}
+						//alert(checkedItems[0].id);
+						editArticle(checkedItems[0].id);
+					}
+					},{
 					id:'btncancel',
 					text:'删除',
 					iconCls:'icon-cancel',
@@ -145,6 +158,19 @@ String ezuiPath = path + "/ezui";
 	<script type="text/javascript">
 		function addArticle(){
 		url = "<%=path %>/backstage/addArticle.html";
+		var frame1 = document.getElementById("frame_content");
+		frame1.src = url;
+		  $('#p').dialog({
+			title: "文章信息",
+			width: 850,
+			resizable:true,
+			closed: false,    
+			cache: false,    
+			height: 400
+          });
+		}
+		function editArticle(id){
+		url = "<%=path %>/backstage/articleInfo.html?id="+id;
 		var frame1 = document.getElementById("frame_content");
 		frame1.src = url;
 		  $('#p').dialog({

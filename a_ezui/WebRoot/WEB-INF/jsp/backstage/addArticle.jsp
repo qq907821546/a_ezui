@@ -26,7 +26,7 @@ String ezuiPath = path + "/ezui";
    		
    		$("#content").val(html);
    		
-   		alert($("#content").val());
+   		//alert($("#content").val());
    		
     	 $('#ff').form('submit', {
     		 url:"<%=path %>/backstage/saveArticle.html",

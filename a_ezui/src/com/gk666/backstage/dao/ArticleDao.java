@@ -20,4 +20,7 @@ public class ArticleDao extends BaseDao{
 	public int delArticle(String id){
 		return super.deleteByEntityNameAndId("Article", id);
 	}
+	public Article findArticleById(String id){
+		return (Article) super.findById("Article", id);
+	}
 }

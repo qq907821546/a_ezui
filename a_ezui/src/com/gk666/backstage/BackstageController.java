@@ -115,4 +115,10 @@ public class BackstageController {
 
 	}
 	
+	@RequestMapping("articleInfo")
+	public void articleInfo(Model model,HttpServletRequest request){
+		Article article = articleService.findArticleById(request);
+		//System.out.println(article.getId()+"================");
+		model.addAttribute("article", article);
+	}
 }
