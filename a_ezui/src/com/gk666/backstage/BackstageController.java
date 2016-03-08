@@ -76,22 +76,7 @@ public class BackstageController {
 	}
 	@RequestMapping("saveArticle")
     public void saveArticle(HttpServletRequest request){
-		String tittle = request.getParameter("tittle");
-		String content = request.getParameter("content");
-		String describe = request.getParameter("describe");
-		String createUser = request.getParameter("createUser");
-
-		article.setId(UUID.randomUUID().toString().replace("-", ""));
-		article.setContent(content);
-		article.setTittle(tittle);
-		article.setDescribe(describe);
-		article.setCreateUser("superGK");
-		article.setViews(article.getViews());
-		article.setPoint(article.getPoint());
-		article.setCreateTime(new Date());
-		article.setState(article.getState());
-		
-		articleService.saveArticle(article);
+		articleService.saveArticle(request);
 	}
 	
 	@RequestMapping("delArticle")
@@ -99,7 +84,7 @@ public class BackstageController {
 		String ids = request.getParameter("ids");
 		String[] id = ids.split(",");
 		for(String i : id){
-		articleService.delArticle(i);
+			articleService.delArticle(i);
 		}
 		PrintWriter pw = null;
 		try {
@@ -118,7 +103,11 @@ public class BackstageController {
 	@RequestMapping("articleInfo")
 	public void articleInfo(Model model,HttpServletRequest request){
 		Article article = articleService.findArticleById(request);
-		//System.out.println(article.getId()+"================");
 		model.addAttribute("article", article);
+	}
+	
+	@RequestMapping("editArticle")
+	public void editArticle(HttpServletRequest request){
+		articleService.editArticle(request);
 	}
 }

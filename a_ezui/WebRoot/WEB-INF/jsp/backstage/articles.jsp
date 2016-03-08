@@ -69,7 +69,7 @@ String ezuiPath = path + "/ezui";
 					}
 					},{
 					id:'btn',
-					text:'修改',
+					text:'编辑',
 					iconCls:'icon-edit',
 					handler:function(){
 						var checkedItems = $('#tt').datagrid('getChecked');

@@ -48,7 +48,7 @@ String ezuiPath = path + "/ezui";
   
     <form id="ff" method="post">
                        标题：<input type="text" name="tittle"></br></br>
-                       描述：</br><textarea name="article" rows="3px" cols="30px"></textarea></br></br><!--   
+                       描述：</br><textarea name="describe" rows="3px" cols="30px"></textarea></br></br><!--   
                        内容：</br><textarea  name="content" rows="10px" cols="30px"></textarea></br>   
                        --><input id="content" type="hidden" name="content">
     </form>
