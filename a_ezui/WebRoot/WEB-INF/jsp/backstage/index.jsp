@@ -9,6 +9,7 @@ String ezuiPath = path + "/ezui";
 <head>
 	<meta charset="UTF-8">
 	<title>ezui</title>
+<title>ezui</title>
 	<link rel="stylesheet" type="text/css" href="<%=ezuiPath %>/themes/default/easyui.css">
 	<link rel="stylesheet" type="text/css" href="<%=ezuiPath %>/themes/icon.css">
 	<link rel="stylesheet" type="text/css" href="<%=ezuiPath %>/demo.css">
